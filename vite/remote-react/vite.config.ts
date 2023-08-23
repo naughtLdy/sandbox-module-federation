@@ -11,6 +11,7 @@ export default defineConfig({
       filename: "remoteEntry.js",
       exposes: {
         "./Button": "./src/components/Button",
+        "./store": "./src/components/store.ts",
       },
       shared: require("./package.json").dependencies,
     }),
