@@ -1,3 +1,4 @@
+import ReactDOM from "react-dom";
 import "./index.css";
 import useCount from "../store";
 
@@ -11,4 +12,10 @@ const Button = () => {
   );
 };
 
+const mount = (el: HTMLElement) => {
+  ReactDOM.render(<Button />, el);
+};
+
 export default Button;
+
+export { Button, mount };

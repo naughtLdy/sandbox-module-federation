@@ -6,7 +6,10 @@
       <button class="button" type="button" @click="count++">
         count is {{ count }}
       </button>
+
       <Button />
+
+      <span id="react" />
     </div>
     <p>
       Edit
@@ -29,12 +32,21 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from "vue";
+import { onMounted, ref } from "vue";
+
+// remote vue
 import Button from "remote_vue/Button";
+
+// remote react
+import { mount } from "remote_react/Button";
 
 defineProps<{ msg: string }>();
 
 const count = ref(0);
+
+onMounted(() => {
+  mount(document.getElementById("react"));
+});
 </script>
 
 <style scoped>

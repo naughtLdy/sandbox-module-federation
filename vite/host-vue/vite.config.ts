@@ -9,6 +9,7 @@ export default defineConfig({
     federation({
       name: "host_vue",
       remotes: {
+        remote_react: "http://localhost:5001/assets/remoteEntry.js",
         remote_vue: "http://localhost:5002/assets/remoteEntry.js",
       },
       shared: require("./package.json").dependencies,
