@@ -10,6 +10,7 @@ export default defineConfig({
       name: "host_react",
       remotes: {
         remote_react: "http://localhost:5001/assets/remoteEntry.js",
+        remote_vue: "http://localhost:5002/assets/remoteEntry.js",
       },
       shared: require("./package.json").dependencies,
     }),

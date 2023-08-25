@@ -22,6 +22,7 @@
 
     "paths": {
       "remote_react/*": ["../remote-react/src/components/*"],
+      "remote_vue": ["../remote-vue/src/components/*"]
     }
   },
   "include": ["src"],

@@ -10,7 +10,7 @@ export default defineConfig({
       name: "remote_vue",
       filename: "remoteEntry.js",
       exposes: {
-        "./Button": "./src/components/Button.vue",
+        "./Button": "./src/components/Button/index.ts",
       },
       shared: require("./package.json").dependencies,
     }),
