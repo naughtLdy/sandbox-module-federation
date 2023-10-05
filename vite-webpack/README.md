@@ -1,0 +1,1 @@
+## vite + webpack module federation
