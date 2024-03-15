@@ -8,15 +8,15 @@ import Button from "remote_react/Button";
 import useCount from "remote_react/store";
 
 // remote vue
-import { mount } from "remote_vue/Button";
+// import { mount } from "remote_vue/Button";
 
 function App() {
   const [count, setCount] = useCount();
   const buttonRef = useRef(null);
 
-  useEffect(() => {
-    mount(buttonRef.current);
-  }, []);
+  // useEffect(() => {
+  //   mount(buttonRef.current);
+  // }, []);
 
   return (
     <>
