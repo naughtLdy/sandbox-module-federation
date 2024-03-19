@@ -1,4 +1,5 @@
 import type { MetaFunction } from "@remix-run/node";
+import { FederationButton } from "~/components/FederationButton";
 
 export const meta: MetaFunction = () => {
   return [
@@ -11,6 +12,9 @@ export default function Index() {
   return (
     <div style={{ fontFamily: "system-ui, sans-serif", lineHeight: "1.8" }}>
       <h1>Remix - Host</h1>
+      <div>
+        <FederationButton />
+      </div>
     </div>
   );
 }
