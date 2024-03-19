@@ -1,3 +1,4 @@
+import Button from "@/components/Button";
 import { Inter } from "next/font/google";
 
 const inter = Inter({ subsets: ["latin"] });
@@ -9,6 +10,9 @@ export default function Home() {
     >
       <div className="z-10 max-w-5xl w-full items-center justify-between font-mono text-sm lg:flex">
         <h2>Next.js - Remote</h2>
+        <div>
+          <Button />
+        </div>
       </div>
     </main>
   );
