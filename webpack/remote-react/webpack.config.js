@@ -1,5 +1,5 @@
 const path = require("path");
-const ModuleFederationPlugin = require("webpack/lib/container/ModuleFederationPlugin");
+const { ModuleFederationPlugin } = require('@module-federation/enhanced/webpack');
 const { dependencies } = require("./package.json");
 
 module.exports = {
@@ -10,6 +10,9 @@ module.exports = {
   devServer: {
     port: 8081,
     historyApiFallback: true,
+  },
+  output: {
+    publicPath: 'http://localhost:8081/',
   },
   module: {
     rules: [
@@ -30,7 +33,6 @@ module.exports = {
         "./Button": "./src/components/Button/index.tsx",
       },
       shared: {
-        ...dependencies,
         react: {
           singleton: true,
           requiredVersion: dependencies.react,
