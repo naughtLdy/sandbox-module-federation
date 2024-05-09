@@ -1,6 +1,7 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
-const ModuleFederationPlugin = require("webpack/lib/container/ModuleFederationPlugin");
+const { ModuleFederationPlugin } = require('@module-federation/enhanced/webpack');
+
 const { dependencies } = require("./package.json");
 
 module.exports = {
@@ -8,6 +9,7 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, "dist"),
     filename: "bundle.js",
+    publicPath: 'http://localhost:8080/',
   },
   mode: "development",
   module: {
@@ -34,11 +36,11 @@ module.exports = {
     }),
     new ModuleFederationPlugin({
       name: "host",
+      filename: 'remoteEntry.js',
       remotes: {
         remote_react: "remote_react@http://localhost:8081/remoteEntry.js",
       },
       shared: {
-        ...dependencies,
         react: {
           singleton: true,
           requiredVersion: dependencies.react,

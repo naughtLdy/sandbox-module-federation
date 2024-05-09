@@ -1,6 +1,5 @@
-import {lazy, Suspense, FC} from "react";
-
-const Button = lazy(() => import("remote_react/Button"));
+import {Suspense, FC} from "react";
+import Button from "remote_react/Button";
 
 const App: FC = () => {
   return (

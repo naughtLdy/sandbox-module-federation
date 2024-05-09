@@ -1,9 +1,15 @@
-import {FC, useState} from 'react';
+import { FC, useState } from "react";
 
-const Button: FC = () => {
+type Props = {};
+
+const Button: FC<Props> = () => {
   const [count, setCount] = useState(0);
 
-  return <button onClick={() => setCount(count + 1)}>Button {count}</button>
-}
+  const click = () => {
+    setCount(count + 1);
+  };
+
+  return <button onClick={click}>Button {count}</button>;
+};
 
 export default Button;
